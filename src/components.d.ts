@@ -23,6 +23,7 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface MyOtherComponent {}
 }
 
 declare global {
@@ -33,8 +34,15 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLMyOtherComponentElement extends Components.MyOtherComponent, HTMLStencilElement {}
+  var HTMLMyOtherComponentElement: {
+    prototype: HTMLMyOtherComponentElement;
+    new (): HTMLMyOtherComponentElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'my-other-component': HTMLMyOtherComponentElement;
   }
 }
 
@@ -53,9 +61,11 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface MyOtherComponent extends JSXBase.HTMLAttributes<HTMLMyOtherComponentElement> {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
+    'my-other-component': MyOtherComponent;
   }
 }
 

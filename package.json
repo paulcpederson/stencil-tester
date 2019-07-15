@@ -11,8 +11,7 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/stencil-starter-project-name/stencil-starter-project-name.js",
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
   "scripts": {
     "build": "stencil build --docs",
@@ -23,5 +22,8 @@
   "devDependencies": {
     "@stencil/core": "^1.0.7"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }
